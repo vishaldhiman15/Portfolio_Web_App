@@ -1,5 +1,5 @@
 # Vishal Portfolio
-made with love 
+made with love  but some stuff is hardcode in code so you can change it according to your choice 
 A premium dark-themed, fully customizable frontend portfolio.
 
 ## Project Structure
