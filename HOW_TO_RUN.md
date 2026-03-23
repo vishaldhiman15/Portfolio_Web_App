@@ -12,7 +12,7 @@ python3 --version
 ### Step 2: Navigate to the Project Folder
 Open your terminal and use the `cd` (change directory) command to navigate to the folder containing the `index.html` file (if you aren't already there):
 ```bash
-cd "path/to/vishal portfolio"
+cd "your current disk contain this project repo path"
 ```
 
 ### Step 3: Start the Python Web Server
