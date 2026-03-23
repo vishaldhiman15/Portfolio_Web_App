@@ -1,0 +1,35 @@
+/* variables.css — Design Tokens & CSS Custom Properties */
+:root {
+  /* Colors */
+  --bg:       #0a0a0f;
+  --bg2:      #111118;
+  --bg3:      #16161f;
+  --card:     #1a1a25;
+  --card2:    #1f1f2e;
+
+  --accent:   #e8ff47;
+  --accent2:  #a78bfa;
+  --accent3:  #38bdf8;
+
+  --text:     #f0f0f5;
+  --muted:    #6b6b80;
+
+  --border:   rgba(255, 255, 255, 0.07);
+  --border2:  rgba(232, 255, 71, 0.25);
+
+  /* Typography */
+  --font-display: 'Syne', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+
+  /* Spacing */
+  --section-pad: 96px 6%;
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   18px;
+  --radius-xl:   24px;
+  --radius-full: 100px;
+
+  /* Transitions */
+  --transition: 0.25s ease;
+  --transition-slow: 0.6s ease;
+}

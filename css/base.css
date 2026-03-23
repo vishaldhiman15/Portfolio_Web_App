@@ -1,0 +1,180 @@
+/* base.css — Base & Typography */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+}
+
+section {
+  padding: var(--section-pad);
+  position: relative;
+  z-index: 2;
+}
+
+/* Section Labels */
+.slabel {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.stitle {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 50px);
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1.05;
+  margin-bottom: 10px;
+}
+
+.ssub {
+  font-size: 15px;
+  color: var(--muted);
+  max-width: 480px;
+  line-height: 1.7;
+  margin-bottom: 50px;
+}
+
+/* Shared Buttons */
+.bp {
+  background: var(--accent);
+  color: #0a0a0f;
+  padding: 13px 30px;
+  border-radius: var(--radius-full);
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.bp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(232, 255, 71, 0.22);
+}
+
+.bo {
+  border: 1px solid var(--border2);
+  color: var(--accent);
+  padding: 13px 30px;
+  border-radius: var(--radius-full);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-display);
+  transition: all var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.bo:hover {
+  background: rgba(232, 255, 71, 0.07);
+  transform: translateY(-2px);
+}
+
+/* Demo Modal */
+#dmodal {
+  position: fixed;
+  inset: 0;
+  z-index: 800;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+}
+#dmodal.open { display: flex; }
+
+.dbox {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  width: 90vw;
+  max-width: 860px;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.dhead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 18px;
+  border-bottom: 1px solid var(--border);
+}
+.dhead h4 {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.durl {
+  flex: 1;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 5px 11px;
+  font-size: 10px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow: hidden;
+}
+.durldot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  flex-shrink: 0;
+}
+#durl {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dclose {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dclose:hover { color: var(--text); }
+
+.dph {
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--muted);
+}
+.dph .dicon { font-size: 44px; }
+.dph-sub { font-size: 11px; margin-top: 4px; }
+.dph a {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  section { padding: 64px 5%; }
+  .ssub { margin-bottom: 32px; }
+}

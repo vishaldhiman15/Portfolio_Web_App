@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Vishal — Frontend & UI Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/reset.css"/>
+<link rel="stylesheet" href="css/variables.css"/>
+<link rel="stylesheet" href="css/base.css"/>
+<link rel="stylesheet" href="css/nav.css"/>
+<link rel="stylesheet" href="css/hero.css"/>
+<link rel="stylesheet" href="css/about.css"/>
+<link rel="stylesheet" href="css/skills.css"/>
+<link rel="stylesheet" href="css/projects.css"/>
+<link rel="stylesheet" href="css/github.css"/>
+<link rel="stylesheet" href="css/contact.css"/>
+<link rel="stylesheet" href="css/footer.css"/>
+<link rel="stylesheet" href="css/editor.css"/>
+<link rel="stylesheet" href="css/animations.css"/>
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div id="cursor"></div>
+<div id="cring"></div>
+
+<!-- Editor Toggle Button -->
+<button id="etoggle" onclick="toggleEditor()">✏️ Edit Portfolio</button>
+
+<!-- ===== EDITOR PANEL ===== -->
+<div id="epanel">
+  <div id="ehead">
+    <h2>✏️ Portfolio Editor</h2>
+    <button id="eclose" onclick="toggleEditor()">×</button>
+  </div>
+  <div id="etabs">
+    <button class="etab active" onclick="switchTab('hero',this)">Hero</button>
+    <button class="etab" onclick="switchTab('about',this)">About</button>
+    <button class="etab" onclick="switchTab('skills',this)">Skills</button>
+    <button class="etab" onclick="switchTab('projects',this)">Projects</button>
+    <button class="etab" onclick="switchTab('github',this)">GitHub</button>
+    <button class="etab" onclick="switchTab('contact',this)">Contact</button>
+  </div>
+  <div id="ebody">
+    <!-- HERO TAB -->
+    <div class="ep active" id="tab-hero">
+      <div class="est">Hero Section</div>
+      <div class="eg"><label>Your Name</label><input id="e-name" oninput="lu()"/></div>
+      <div class="eg"><label>Highlighted Word (accent color)</label><input id="e-aw" oninput="lu()"/></div>
+      <div class="eg"><label>Third Line of Name</label><input id="e-tl" oninput="lu()"/></div>
+      <div class="eg"><label>Role / Title</label><input id="e-role" oninput="lu()"/></div>
+      <div class="eg"><label>Availability Badge</label><input id="e-badge" oninput="lu()"/></div>
+      <div class="eg"><label>Short Bio</label><textarea id="e-bio" oninput="lu()"></textarea></div>
+      <div class="erow">
+        <div class="eg"><label>Stat 1 #</label><input id="e-s1n" oninput="lu()"/></div>
+        <div class="eg"><label>Stat 1 Label</label><input id="e-s1l" oninput="lu()"/></div>
+      </div>
+      <div class="erow">
+        <div class="eg"><label>Stat 2 #</label><input id="e-s2n" oninput="lu()"/></div>
+        <div class="eg"><label>Stat 2 Label</label><input id="e-s2l" oninput="lu()"/></div>
+      </div>
+      <div class="erow">
+        <div class="eg"><label>Stat 3 #</label><input id="e-s3n" oninput="lu()"/></div>
+        <div class="eg"><label>Stat 3 Label</label><input id="e-s3l" oninput="lu()"/></div>
+      </div>
+      <div class="erow">
+        <div class="eg"><label>CTA Button</label><input id="e-cta" oninput="lu()"/></div>
+        <div class="eg"><label>Nav Logo</label><input id="e-nl" oninput="lu()"/></div>
+      </div>
+    </div>
+    <!-- ABOUT TAB -->
+    <div class="ep" id="tab-about">
+      <div class="est">About Me</div>
+      <div class="eg"><label>Paragraph 1</label><textarea id="e-a1" oninput="lu()"></textarea></div>
+      <div class="eg"><label>Paragraph 2</label><textarea id="e-a2" oninput="lu()"></textarea></div>
+      <div class="eg"><label>Paragraph 3</label><textarea id="e-a3" oninput="lu()"></textarea></div>
+      <div class="eg"><label>Tech Badges (comma-separated)</label><input id="e-badges" oninput="lu()"/></div>
+      <div class="est" style="margin-top:18px;">Timeline / Journey</div>
+      <div id="tl-list"></div>
+      <button class="add-btn" onclick="addTL()">+ Add Timeline Item</button>
+    </div>
+    <!-- SKILLS TAB -->
+    <div class="ep" id="tab-skills">
+      <div class="est">Skill Cards</div>
+      <div id="sk-list"></div>
+      <button class="add-btn" onclick="addSK()">+ Add Skill Card</button>
+    </div>
+    <!-- PROJECTS TAB -->
+    <div class="ep" id="tab-projects">
+      <div class="est">Projects</div>
+      <div id="pr-list"></div>
+      <button class="add-btn" onclick="addPR()">+ Add Project</button>
+    </div>
+    <!-- GITHUB TAB -->
+    <div class="ep" id="tab-github">
+      <div class="est">GitHub Repos</div>
+      <div id="gh-list"></div>
+      <button class="add-btn" onclick="addGH()">+ Add Repo</button>
+    </div>
+    <!-- CONTACT TAB -->
+    <div class="ep" id="tab-contact">
+      <div class="est">Contact Info</div>
+      <div class="eg"><label>Email</label><input id="e-email" oninput="lu()"/></div>
+      <div class="eg"><label>LinkedIn URL</label><input id="e-li" oninput="lu()"/></div>
+      <div class="eg"><label>GitHub URL</label><input id="e-ghu" oninput="lu()"/></div>
+      <div class="eg"><label>Location</label><input id="e-loc" oninput="lu()"/></div>
+      <div class="eg"><label>Footer Text</label><input id="e-ft" oninput="lu()"/></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PORTFOLIO ===== -->
+<nav>
+  <a class="nlogo" href="#" id="nl">V/</a>
+  <ul class="nlinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#github">GitHub</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="ncta" href="#contact">Hire Me</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hglow"></div>
+  <div class="hinner">
+    <div class="htag"><span class="pulse"></span><span id="hbadge">Available for work</span></div>
+    <h1 class="hname" id="hname">Vishal<br/><em id="haw">Frontend</em><br/><span id="htl">Developer</span></h1>
+    <div class="hrole" id="hrole">Frontend &amp; UI Developer</div>
+    <p class="hbio" id="hbio">Crafting pixel-perfect, high-performance web interfaces that blend elegant design with clean, modern code.</p>
+    <div class="hbtns">
+      <a href="#projects" class="bp" id="hcta">View My Work →</a>
+      <a href="#contact" class="bo">Let's Talk</a>
+    </div>
+    <div class="srow">
+      <div><div class="snum" id="s1n">2+</div><div class="slbl" id="s1l">Years Exp.</div></div>
+      <div><div class="snum" id="s2n">18+</div><div class="slbl" id="s2l">Projects Built</div></div>
+      <div><div class="snum" id="s3n">100%</div><div class="slbl" id="s3l">Passion</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="reveal">
+    <div class="slabel">Who I am</div>
+    <div class="stitle">About Me</div>
+  </div>
+  <div class="agrid">
+    <div class="atext reveal rd1">
+      <p id="ap1"></p>
+      <p id="ap2"></p>
+      <p id="ap3"></p>
+      <div class="abadges" id="abadges"></div>
+    </div>
+    <div class="acard reveal rd2">
+      <div class="actitle">Journey</div>
+      <div id="tlrender"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="reveal">
+    <div class="slabel">What I do</div>
+    <div class="stitle">Skills &amp; Tech</div>
+    <p class="ssub">The tools I use to build fast, beautiful, accessible experiences.</p>
+  </div>
+  <div class="skgrid" id="skrender"></div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="reveal">
+    <div class="slabel">My Work</div>
+    <div class="stitle">Featured Projects</div>
+    <p class="ssub">Click Live Demo to preview or GitHub to explore the code.</p>
+  </div>
+  <div class="pfil" id="pfil">
+    <button class="fbtn active" onclick="filterP('all',this)">All</button>
+  </div>
+  <div class="pgrid" id="prrender"></div>
+</section>
+
+<!-- GITHUB -->
+<section id="github">
+  <div class="reveal">
+    <div class="slabel">Open Source</div>
+    <div class="stitle">GitHub Repos</div>
+    <p class="ssub">My public repos — click to visit the full code on GitHub.</p>
+  </div>
+  <div class="ghgrid" id="ghrender"></div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="reveal">
+    <div class="slabel">Get in touch</div>
+    <div class="stitle">Let's Work Together</div>
+    <p class="ssub">Have a project in mind? I'm always open to new opportunities.</p>
+  </div>
+  <div class="cwrap">
+    <div class="reveal rd1" id="cinfo"></div>
+    <div class="reveal rd2">
+      <form class="cform" onsubmit="submitForm(event)">
+        <div class="fr">
+          <div class="fg"><label>Name</label><input placeholder="Your name" required/></div>
+          <div class="fg"><label>Email</label><input type="email" placeholder="your@email.com" required/></div>
+        </div>
+        <div class="fg"><label>Subject</label><input placeholder="Project inquiry..."/></div>
+        <div class="fg"><label>Message</label><textarea placeholder="Tell me about your project..."></textarea></div>
+        <button type="submit" class="fsub">Send Message ✉️</button>
+        <div class="fsuccess" id="fsuccess">✅ Sent! I'll get back to you soon.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="flogo" id="flogo">V/</span>
+  <p id="fcopy">© 2025 Vishal. Built with passion.</p>
+  <div class="socials" id="fsocials"></div>
+</footer>
+
+<!-- DEMO MODAL -->
+<div id="dmodal">
+  <div class="dbox">
+    <div class="dhead">
+      <h4 id="dtitle">Project Demo</h4>
+      <div class="durl">
+        <span class="durldot"></span>
+        <span id="durl"></span>
+      </div>
+      <button class="dclose" onclick="closeDemo()">×</button>
+    </div>
+    <div class="dph">
+      <div class="dicon">🚀</div>
+      <p id="dphtitle">Preview</p>
+      <p class="dph-sub">Your live site would load here in deployment.</p>
+      <a id="dext" href="#" target="_blank">Open live URL →</a>
+    </div>
+  </div>
+</div>
+
+<!-- JS Files -->
+<script src="js/data.js"></script>
+<script src="js/editor.js"></script>
+<script src="js/render.js"></script>
+<script src="js/cursor.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

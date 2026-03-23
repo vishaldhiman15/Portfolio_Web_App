@@ -1,0 +1,119 @@
+/* hero.css — Hero Section */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 6%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hglow {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(232, 255, 71, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hinner {
+  max-width: 760px;
+  z-index: 1;
+  padding-top: 80px;
+}
+
+/* Badge */
+.htag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(232, 255, 71, 0.07);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-full);
+  padding: 6px 16px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 26px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.pulse {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+/* Name */
+.hname {
+  font-family: var(--font-display);
+  font-size: clamp(50px, 8vw, 98px);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -4px;
+  margin-bottom: 16px;
+}
+.hname em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+/* Role */
+.hrole {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 2.5vw, 30px);
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+}
+
+/* Bio */
+.hbio {
+  font-size: 16px;
+  color: rgba(240, 240, 245, 0.65);
+  line-height: 1.78;
+  max-width: 520px;
+  font-weight: 300;
+  margin-bottom: 36px;
+}
+
+/* Buttons */
+.hbtns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Stats */
+.srow {
+  display: flex;
+  gap: 36px;
+  margin-top: 46px;
+  padding-top: 38px;
+  border-top: 1px solid var(--border);
+}
+.snum {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--accent);
+}
+.slbl {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+  #hero { padding: 0 5%; }
+  .hname { letter-spacing: -2px; }
+  .srow { gap: 22px; }
+}

@@ -1,0 +1,139 @@
+/* projects.css — Projects Section */
+#projects { background: var(--bg2); }
+
+/* Filter Buttons */
+.pfil {
+  display: flex;
+  gap: 9px;
+  flex-wrap: wrap;
+  margin-bottom: 34px;
+}
+.fbtn {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  padding: 6px 16px;
+  font-size: 11px;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.fbtn.active,
+.fbtn:hover {
+  background: var(--accent);
+  color: #0a0a0f;
+  border-color: var(--accent);
+  font-weight: 700;
+}
+
+/* Grid */
+.pgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 20px;
+}
+
+/* Card */
+.pcard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.pcard:hover {
+  transform: translateY(-6px);
+  border-color: rgba(232, 255, 71, 0.2);
+}
+
+/* Preview */
+.pprev {
+  height: 175px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  position: relative;
+}
+.pprev::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, var(--card) 100%);
+}
+
+/* Live Badge */
+.plbadge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: var(--accent3);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  z-index: 2;
+  letter-spacing: .05em;
+}
+
+/* Body */
+.pbody { padding: 18px; }
+.ptype {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 7px;
+}
+.pcard h3 {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.pcard p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 13px;
+}
+
+/* Stack Tags */
+.pstack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 14px;
+}
+.stag {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 5px;
+  color: var(--muted);
+}
+
+/* Action Buttons */
+.pacts { display: flex; gap: 8px; }
+.pbtn {
+  flex: 1;
+  text-align: center;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  transition: all var(--transition);
+  font-family: var(--font-display);
+}
+.pdemo { background: var(--accent); color: #0a0a0f; }
+.pdemo:hover { opacity: 0.85; }
+.pgh {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.pgh:hover { border-color: var(--border2); color: var(--accent); }
