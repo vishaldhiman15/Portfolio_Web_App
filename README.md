@@ -2,6 +2,11 @@
 made with love  but some stuff is hardcode in code so you can change it according to your choice 
 A premium dark-themed, fully customizable frontend portfolio.
 
+
+
+
+// If you want to make changes so please go in /js/data.js  all data i had make for myself so you edit this and this will fetch you info 
+
 ## Project Structure
 
 ```
