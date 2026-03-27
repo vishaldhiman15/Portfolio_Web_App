@@ -10,7 +10,7 @@ const D = {
   /* ── HERO ── */
   hero: {
     name:   'Vishal',
-    aw:     'Frontend',       // accent/highlighted word
+    aw:     'Full Stack',       // accent/highlighted word
     tl:     'Developer',      // third line of name
     role:   'Frontend & UI Developer',
     badge:  'Available for work',
@@ -103,10 +103,9 @@ const D = {
 
   /* ── CONTACT ── */
   contact: {
-    email: 'vishal@email.com',
-    li:    'https://linkedin.com/in/vishal',
-    gh:    'https://github.com/vishal',
-    loc:   'Delhi, India',
+    email: 'dhimanvishal1591@email.com',
+    gh:    'https://github.com/vishaldhiman15',
+    loc:   'HP, India',
     ft:    '© 2025 Vishal. Built with passion.',
   },
 };
